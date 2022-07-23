@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  example_code_app:
+    image: example_code_app
+    container_name: example_code_api
+    build:
+      context: ./Example.Code.API
+      target: debug
+    ports:
+     - 8080:80
+    volumes:
+      - ./Example.Code.API:/app
+    environment:
+      - ASPNETCORE_URLS=http://+:80
